@@ -1,0 +1,66 @@
+[gd_scene load_steps=5 format=3 uid="uid://bt1hcxr8o382m"]
+
+[ext_resource type="Script" path="res://scripts/title.gd" id="1_fibuu"]
+[ext_resource type="FontFile" uid="uid://dd43schl5e374" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="2_ckylw"]
+[ext_resource type="FontFile" uid="uid://cu3ay8kimlqkk" path="res://assets/fonts/PixelOperator8.ttf" id="3_phu2r"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q1xqa"]
+bg_color = Color(0.101868, 0.101868, 0.101868, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+shadow_color = Color(0.116741, 0.116741, 0.116741, 0.6)
+shadow_offset = Vector2(1, 1)
+
+[node name="Title" type="CanvasLayer"]
+script = ExtResource("1_fibuu")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1210.0
+offset_bottom = 689.0
+color = Color(0.118439, 0.669532, 1, 1)
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -284.0
+offset_top = 96.0
+offset_right = 284.0
+offset_bottom = 128.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_ckylw")
+theme_override_font_sizes/font_size = 32
+text = "Knightly Adventures"
+
+[node name="Start" type="Button" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -121.0
+offset_top = 418.0
+offset_right = 122.0
+offset_bottom = 492.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("3_phu2r")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_q1xqa")
+text = "Start"
+
+[node name="Exit" type="Button" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -121.0
+offset_top = 516.0
+offset_right = 122.0
+offset_bottom = 590.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("3_phu2r")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_q1xqa")
+text = "Exit"
+
+[connection signal="pressed" from="Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]
